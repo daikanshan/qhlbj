@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :users, class_name: "Admin::User"
+  # devise_for :users, class_name: "Admin::User"
+  devise_for :users, class_name: "Admin::User" ,controllers: {
+    sessions: 'admin/users/sessions',
+    registrations: 'admin/users/registrations'
+  }
   namespace :admin do
     resources :users
   end
   root 'admin/users#index'
+  mount RuCaptcha::Engine => "/rucaptcha"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

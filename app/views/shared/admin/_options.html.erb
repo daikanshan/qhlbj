@@ -3,7 +3,7 @@
     <ul class="navs">
         <li class="btn-link">信息管理
           <ul class="subul">
-            <li>公司简介</li>
+            <li><%= link_to "公司简介" %></li>
             <li>公司文化</li>
             <li>公司资源</li>
             <li>最新动态</li>
@@ -13,8 +13,8 @@
         </li>
         <li class="btn-link">产品管理
           <ul class="subul">
-            <li>产品信息</li>
-            <li>产品分类</li>
+            <li><%= link_to "产品信息", admin_products_path %></li>
+            <li><%= link_to "产品分类", admin_categories_path %></li>
           </ul>
         </li>
         <li class="btn-link">功能管理
@@ -37,7 +37,7 @@
             <li>系统设置</li>
           </ul>
         </li>
-        <li ><%= link_to '退出',destroy_user_session_path,method: :delete %></li></li>
+        <li ><%= link_to '退出登录',destroy_user_session_path,method: :delete %></li></li>
       </ul>
   </header>
 </nav>

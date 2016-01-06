@@ -1,13 +1,21 @@
 Rails.application.routes.draw do
+
   devise_for :users, class_name: "Admin::User" ,controllers: {
     sessions: 'admin/users/sessions',
     registrations: 'admin/users/registrations'
   }
   namespace :admin do
+    delete 'products/:ids/destroy' => 'products#batch_destroy'
+    delete 'categories/:ids/destroy' => 'categories#batch_destroy'
+    delete 'news/:ids/destroy' => 'news#batch_destroy'
     resources :users
+    resources :products
+    resources :categories
+    resources :news
   end
   root 'admin/users#index'
   mount RuCaptcha::Engine => "/rucaptcha"
+  mount Ckeditor::Engine => '/ckeditor'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

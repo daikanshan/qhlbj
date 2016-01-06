@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>产品列表</h1>
+<div id="quick-option" class="quick_option btn-group" role="group" base-url="<%= admin_products_url %>">
+  <a href="<%= new_admin_product_path %>" data-method="get" rel="nofollow" class="btn btn-primary">
+    <i class="glyphicon glyphicon-plus"></i>
+    添加产品
+  </a>
+  <a id="view" class="btn btn-info" disabled="disabled">
+    <i class="glyphicon glyphicon-align-justify"></i>
+    详细信息
+  </a>
+  <a id="edit" class="btn btn-info" disabled="disabled">
+    <i class="glyphicon glyphicon-pencil"></i>
+    编辑
+  </a>
+  <a id="del" rel="nofollow" class="btn btn-danger" disabled="disabled">
+    <i class="glyphicon glyphicon-trash"></i>
+    批量删除
+  </a>
+</div>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>
+        <label class="checkbox">
+          <input type="checkbox" class="p_checkbox" id="check_all">
+        </label>
+        <br>
+      </th>
+      <th>名称</th>
+      <th>所属分类</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_products.each do |admin_product| %>
+      <tr class="item_line">
+        <td>
+          <label class="checkbox">
+            <input type="checkbox" class="p_checkbox" value="<%= admin_product.id %>">
+          </label>
+        </td>
+        <td><%= admin_product.name %></td>
+        <td><%= admin_product.category.name %></td>
+        <td><%= link_to '显示详情', admin_product %></td>
+        <td><%= link_to '编辑', edit_admin_product_path(admin_product) %></td>
+        <td><%= link_to '删除', admin_product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

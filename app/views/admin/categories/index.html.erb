@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<h1>产品分类</h1>
+
+<div id="quick-option" class="quick_option btn-group" role="group" base-url="<%= admin_categories_url %>">
+  <a href="<%= new_admin_category_path %>" data-method="get" rel="nofollow" class="btn btn-primary">
+    <i class="glyphicon glyphicon-plus"></i>
+    新建分类
+  </a>
+  <a id="view" class="btn btn-info" disabled="disabled">
+    <i class="glyphicon glyphicon-align-justify"></i>
+    详细信息
+  </a>
+  <a id="edit" class="btn btn-info" disabled="disabled">
+    <i class="glyphicon glyphicon-pencil"></i>
+    编辑
+  </a>
+  <a id="del" rel="nofollow" class="btn btn-danger" disabled="disabled">
+    <i class="glyphicon glyphicon-trash"></i>
+    批量删除
+  </a>
+</div>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>
+        <label class="checkbox">
+          <input type="checkbox" class="p_checkbox" id="check_all">
+        </label>
+        <br>
+      </th>
+      <th>名称</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_categories.each do |admin_category| %>
+      <tr class="item_line">
+        <td>
+          <label class="checkbox">
+            <input type="checkbox" class="p_checkbox" value="<%= admin_category.id %>">
+          </label>
+        </td>
+        <td><%= admin_category.name %></td>
+        <td><%= link_to '显示详情', admin_category %></td>
+        <td><%= link_to '编辑', edit_admin_category_path(admin_category) %></td>
+        <td><%= link_to '删除', admin_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

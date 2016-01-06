@@ -4,18 +4,29 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import 'flat-ui';
+h1{
+  font-size: 45px;
+}
 .login_panel{
   width:35%;
   margin:0 auto;
 }
+.header{
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index: 99;
+}
 .bodyer{
   .options{
+    z-index: 0;
     width:250px;
-    top:53px;
-    bottom:0px;
-    float:left;
-    position: absolute;
-    background-color: rgb(187, 245, 35);
+    bottom:0;
+    position: fixed;
+    left:0;
+    top:0;
+    padding-top: 100px;
     ul{
       list-style: none;
       li{
@@ -25,6 +36,7 @@
     }
   }
   .content{
+    margin-top: 53px;
     margin-left: 300px;
     float:left;
   }

@@ -1,32 +1,47 @@
-<h2>Log in</h2>
-<p id="notice"><%= notice %></p>
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>青海利百家后台管理</title>
+  <%= stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'admin', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <h2>Log in</h2>
+  <div class="login_panel">
+    <p id="notice"><%= notice %></p>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-group">
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true ,class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password %>
+        <%= f.password_field :password, autocomplete: "off" ,class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :vcode %>
+        <%= rucaptcha_input_tag(class: 'form-control', placeholder: '请输入验证码') %>
+        <%= rucaptcha_image_tag(alt: 'Captcha') %>
+      </div>
+
+      <% if devise_mapping.rememberable? -%>
+        <div class="form-group">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+      <% end -%>
+
+      <div class="form-group">
+        <%= f.submit "Log in" ,class: 'form-control' %>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :vcode %><br />
-    <%= rucaptcha_input_tag(class: 'form-control', placeholder: '请输入验证码') %><br /><br />
-    <%= rucaptcha_image_tag(alt: 'Captcha') %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</body>
+</html>

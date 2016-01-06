@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # devise_for :users, class_name: "Admin::User"
   devise_for :users, class_name: "Admin::User" ,controllers: {
     sessions: 'admin/users/sessions',
     registrations: 'admin/users/registrations'

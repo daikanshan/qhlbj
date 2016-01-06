@@ -1,3 +1,31 @@
 // Place all the styles related to the admin controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import 'flat-ui';
+.login_panel{
+  width:35%;
+  margin:0 auto;
+}
+.bodyer{
+  .options{
+    width:250px;
+    top:53px;
+    bottom:0px;
+    float:left;
+    position: absolute;
+    background-color: rgb(187, 245, 35);
+    ul{
+      list-style: none;
+      li{
+        cursor:pointer;
+        text-decoration:none;
+      }
+    }
+  }
+  .content{
+    margin-left: 300px;
+    float:left;
+  }
+}

@@ -1,0 +1,43 @@
+<nav class="">
+  <header>
+    <ul class="navs">
+        <li class="btn-link">信息管理
+          <ul class="subul">
+            <li>公司简介</li>
+            <li>公司文化</li>
+            <li>公司资源</li>
+            <li>最新动态</li>
+            <li>行业新闻</li>
+            <li>联系我们</li>
+          </ul>
+        </li>
+        <li class="btn-link">产品管理
+          <ul class="subul">
+            <li>产品信息</li>
+            <li>产品分类</li>
+          </ul>
+        </li>
+        <li class="btn-link">功能管理
+          <ul class="subul">
+            <li>留言管理</li>
+            <li>友情链接</li>
+            <li>广告管理</li>
+          </ul>
+        </li>
+        <li class="btn-link">账户管理
+          <ul class="subul">
+            <li>邮箱管理</li>
+            <li>密码管理</li>
+            <li>操作日志</li>
+          </ul>
+        </li>
+        <li class="btn-link">系统管理
+          <ul class="subul">
+            <li>系统信息</li>
+            <li>系统设置</li>
+          </ul>
+        </li>
+        <li ><%= link_to '退出',destroy_user_session_path,method: :delete %></li></li>
+      </ul>
+  </header>
+</nav>

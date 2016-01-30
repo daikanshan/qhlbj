@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160127122754) do
+ActiveRecord::Schema.define(version: 20160130020147) do
 
   create_table "admin_categories", force: :cascade do |t|
     t.string   "name",           limit: 255
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20160127122754) do
     t.text     "content",    limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.string   "name",       limit: 255
   end
 
   create_table "admin_news", force: :cascade do |t|

@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>公司文化</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>标题</th>
+      <th>内容</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_cultures.each do |admin_culture| %>
+      <tr>
+        <td><%= admin_culture.title %></td>
+        <td><%= admin_culture.content %></td>
+        <td><%= link_to '显示详情', admin_culture %></td>
+        <td><%= link_to '编辑', edit_admin_culture_path(admin_culture) %></td>
+        <!-- <td><%= link_to '删除', admin_culture, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

@@ -28,7 +28,7 @@ class Admin::NewsController < AdminController
 
     respond_to do |format|
       if @admin_news.save
-        format.html { redirect_to @admin_news, notice: 'News was successfully created.' }
+        format.html { redirect_to @admin_news }
         format.json { render :show, status: :created, location: @admin_news }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class Admin::NewsController < AdminController
   def update
     respond_to do |format|
       if @admin_news.update(admin_news_params)
-        format.html { redirect_to @admin_news, notice: 'News was successfully updated.' }
+        format.html { redirect_to @admin_news }
         format.json { render :show, status: :ok, location: @admin_news }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class Admin::NewsController < AdminController
   def destroy
     @admin_news.destroy
     respond_to do |format|
-      format.html { redirect_to admin_news_index_url, notice: 'News was successfully destroyed.' }
+      format.html { redirect_to admin_news_index_url }
       format.json { head :no_content }
     end
   end

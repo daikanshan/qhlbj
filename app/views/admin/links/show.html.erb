@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>名称:</strong>
+  <%= @admin_link.name %>
+</p>
+
+<p>
+  <strong>地址:</strong>
+  <%= @admin_link.url %>
+</p>
+
+<%= link_to '编辑', edit_admin_link_path(@admin_link) %> |
+<%= link_to '返回', admin_links_path %>

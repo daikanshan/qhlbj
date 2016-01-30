@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+<h1>公司简介</h1>
+<p>
+  <strong>标题:</strong>
+  <%= @admin_info.title %>
+</p>
+
+<p>
+  <strong>内容:</strong>
+  <%= @admin_info.content %>
+</p>
+
+<%= link_to '编辑', edit_admin_info_path(@admin_info) %>

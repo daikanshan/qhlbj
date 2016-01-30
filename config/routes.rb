@@ -8,10 +8,25 @@ Rails.application.routes.draw do
     delete 'products/:ids/destroy' => 'products#batch_destroy'
     delete 'categories/:ids/destroy' => 'categories#batch_destroy'
     delete 'news/:ids/destroy' => 'news#batch_destroy'
+    delete 'news/:ids/destroy' => 'infomation#batch_destroy'
     resources :users
     resources :products
     resources :categories
+    resources :information do
+      collection do
+        get 'news'
+        get 'info'
+        get 'dynamic'
+        get 'culture'
+      end
+    end
+    post 'infomations' => 'information#index',as: :informations
     resources :news
+    resources :contacts
+    resources :infos
+    resources :cultures
+    resources :messages
+    resources :links
   end
   root 'admin/users#index'
   mount RuCaptcha::Engine => "/rucaptcha"

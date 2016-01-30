@@ -31,7 +31,7 @@ class Admin::ProductsController < AdminController
 
     respond_to do |format|
       if @admin_product.save
-        format.html { redirect_to admin_products_url, notice: 'Product was successfully created.' }
+        format.html { redirect_to admin_products_url }
         format.json { render :show, status: :created, location: @admin_product }
       else
         format.html { render :new }
@@ -45,7 +45,7 @@ class Admin::ProductsController < AdminController
   def update
     respond_to do |format|
       if @admin_product.update(admin_product_params)
-        format.html { redirect_to admin_products_url, notice: 'Product was successfully updated.' }
+        format.html { redirect_to admin_products_url }
         format.json { render :show, status: :ok, location: @admin_product }
       else
         format.html { render :edit }
@@ -59,7 +59,7 @@ class Admin::ProductsController < AdminController
   def destroy
     @admin_product.destroy
     respond_to do |format|
-      format.html { redirect_to admin_products_url, notice: 'Product was successfully destroyed.' }
+      format.html { redirect_to admin_products_url }
       format.json { head :no_content }
     end
   end

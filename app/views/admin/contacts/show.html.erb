@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+<h1>联系我们</h1>
+<p>
+  <strong>联系人:</strong>
+  <%= @admin_contact.name %>
+</p>
+
+<p>
+  <strong>邮箱:</strong>
+  <%= @admin_contact.email %>
+</p>
+
+<p>
+  <strong>手机:</strong>
+  <%= @admin_contact.phone %>
+</p>
+
+<p>
+  <strong>固定电话:</strong>
+  <%= @admin_contact.fixed_phone %>
+</p>
+
+<p>
+  <strong>地址:</strong>
+  <%= @admin_contact.address %>
+</p>
+
+<%= link_to '编辑', edit_admin_contact_path(@admin_contact) %>

@@ -12,14 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label "标题" %><br>
     <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_area :content %>
-  </div>
+  <%= label_tag "内容" %>
+  <%= f.cktext_area :content,:ckeditor => {:uiColor => '#34495E', :toolbar => 'full'} %>
+  <br/>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit '确定' %>
   </div>
 <% end %>

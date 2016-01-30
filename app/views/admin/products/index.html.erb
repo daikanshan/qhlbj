@@ -43,7 +43,11 @@
           </label>
         </td>
         <td><%= admin_product.name %></td>
+        <% if admin_product.category.nil? %>
+        <td>暂无分类</td>
+        <% else %>
         <td><%= admin_product.category.name %></td>
+        <% end %>
         <td><%= link_to '显示详情', admin_product %></td>
         <td><%= link_to '编辑', edit_admin_product_path(admin_product) %></td>
         <td><%= link_to '删除', admin_product, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,0 +1,24 @@
+<%= form_for(@admin_culture) do |f| %>
+  <% if @admin_culture.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin_culture.errors.count, "error") %> prohibited this admin_culture from being saved:</h2>
+
+      <ul>
+      <% @admin_culture.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "标题" %><br>
+    <%= f.text_field :title %>
+  </div>
+  <%= label_tag "内容" %>
+  <%= f.cktext_area :content,:ckeditor => {:uiColor => '#34495E', :toolbar => 'full'} %>
+  <br/>
+  <div class="actions">
+    <%= f.submit '确定' %>
+  </div>
+<% end %>

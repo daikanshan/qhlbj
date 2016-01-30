@@ -71,15 +71,11 @@ jQuery.extend({
 
 $(document).ready(function(){
   // options
-  $('ul.subul').hide();
-  $('ul.navs').children().click(function(){
+  $('ul.subul').slideUp();
+  $('li.current_controller').parent('ul').slideDown();
 
-    if($(this).children().first().is(":hidden")){
-      $('ul.subul').slideUp();
-      $(this).children().slideDown();
-    }else{
-      $(this).children().slideUp();
-    }
+  $('ul.navs').children('li').click(function(){
+    $(this).children('ul').slideToggle();
   })
   // end options
 

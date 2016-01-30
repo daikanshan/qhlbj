@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>联系方式:</strong>
+  <%= @admin_message.contact %>
+</p>
+
+<p>
+  <strong>内容:</strong>
+  <%= @admin_message.content %>
+</p>
+
+<%= link_to '编辑', edit_admin_message_path(@admin_message) %> |
+<%= link_to '返回', admin_messages_path %>

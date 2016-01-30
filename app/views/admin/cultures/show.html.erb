@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+<h1>公司文化</h1>
+<p>
+  <strong>标题:</strong>
+  <%= @admin_culture.title %>
+</p>
+
+<p>
+  <strong>内容:</strong>
+  <%= @admin_culture.content %>
+</p>
+
+<%= link_to '编辑', edit_admin_culture_path(@admin_culture) %>

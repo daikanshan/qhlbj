@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>标题:</strong>
+  <%= @admin_bimage.title %>
+</p>
+
+<p>
+  <strong>图片:</strong><br>
+  <%= image_tag @admin_bimage.avatar_url(:large) if @admin_bimage.avatar %>
+</p>
+
+<p>
+  <strong>简介:</strong>
+  <%= @admin_bimage.abstract %>
+</p>
+
+<p>
+  <strong>状态:</strong>
+  <%= @admin_bimage.isShown %>
+</p>
+
+
+<%= link_to '编辑', edit_admin_bimage_path(@admin_bimage) %> |
+<%= link_to '返回', admin_bimages_path %>

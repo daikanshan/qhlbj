@@ -38,3 +38,10 @@ end
 if Admin::Contact.count==0
   Admin::Contact.create(name:"称呼",email:"邮箱",phone:"手机号码",fixed_phone:"固定电话",address:"地址")
 end
+Admin::Config.delete_all
+if Admin::Config.count==0
+  Admin::Config.create(name:"Logo",val:1)
+  Admin::Config.create(name:"淘宝",val:1,url:"url")
+  Admin::Config.create(name:"微信",val:1,url:"url")
+  Admin::Config.create(name:"微博",val:1,url:"url")
+end

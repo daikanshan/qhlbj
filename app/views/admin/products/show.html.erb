@@ -1,24 +1,25 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>名称:</strong>
   <%= @admin_product.name %>
 </p>
 
 <p>
-  <strong>Category:</strong>
-  <%= @admin_product.category %>
+  <strong>图片:</strong><br>
+  <%= image_tag @admin_product.avatar_url(:large) if @admin_product.avatar %>
 </p>
 
 <p>
-  <strong>Abstract:</strong>
+  <strong>分类:</strong>
+  <%= @admin_product.category.name %>
+</p>
+
+<p>
+  <strong>简介:</strong>
   <%= @admin_product.describe %>
 </p>
 
-<p>
-  <strong>Img:</strong>
-  <%= @admin_product.img_url %>
-</p>
 
-<%= link_to 'Edit', edit_admin_product_path(@admin_product) %> |
-<%= link_to 'Back', admin_products_path %>
+<%= link_to '编辑', edit_admin_product_path(@admin_product) %> |
+<%= link_to '返回', admin_products_path %>

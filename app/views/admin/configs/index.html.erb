@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>系统设置</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>名称</th>
+      <th>图片</th>
+      <th>状态</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_configs.each do |admin_config| %>
+      <tr>
+        <td><%= admin_config.name %></td>
+        <td><%= image_tag admin_config.avatar_url(:small) if admin_config.avatar %></td>
+        <td><%= admin_config.status %></td>
+        <td><%= link_to '显示详情', admin_config %></td>
+        <td><%= link_to '编辑', edit_admin_config_path(admin_config) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

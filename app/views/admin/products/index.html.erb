@@ -29,6 +29,7 @@
         <br>
       </th>
       <th>名称</th>
+      <th>图片</th>
       <th>所属分类</th>
       <th colspan="3"></th>
     </tr>
@@ -43,6 +44,7 @@
           </label>
         </td>
         <td><%= admin_product.name %></td>
+        <td><%= image_tag admin_product.avatar_url(:small) if admin_product.avatar %></td>
         <% if admin_product.category.nil? %>
         <td>暂无分类</td>
         <% else %>

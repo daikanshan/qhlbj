@@ -11,13 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160130020147) do
+ActiveRecord::Schema.define(version: 20160203063907) do
+
+  create_table "admin_bimages", force: :cascade do |t|
+    t.string   "title",      limit: 255
+    t.string   "avatar",     limit: 255
+    t.integer  "shown",      limit: 4
+    t.text     "abstract",   limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
 
   create_table "admin_categories", force: :cascade do |t|
     t.string   "name",           limit: 255
     t.integer  "supcategory_id", limit: 4
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+  end
+
+  create_table "admin_configs", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "avatar",     limit: 255
+    t.integer  "val",        limit: 4
+    t.string   "url",        limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "admin_contacts", force: :cascade do |t|
@@ -81,6 +99,7 @@ ActiveRecord::Schema.define(version: 20160130020147) do
     t.string   "img_url",     limit: 255
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.string   "avatar",      limit: 255
   end
 
   create_table "admin_users", force: :cascade do |t|

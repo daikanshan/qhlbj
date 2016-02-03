@@ -1,0 +1,28 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import 'flat-ui';
+body{
+  background: url(background.jpg);
+}
+.header{
+
+  .logo{
+    margin-top:20px;
+    margin-left:20px;
+  }
+  .navbar{
+    float:left;
+    position :absolute;
+    top:50px;
+    left:200px;
+    right:100px;
+    // width:80%;
+    // background-color: rgba(0,0,0,0);
+  }
+}
+.bodyer{
+  clear:both;
+}

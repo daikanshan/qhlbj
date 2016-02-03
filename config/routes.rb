@@ -1,17 +1,30 @@
 Rails.application.routes.draw do
 
+
+
+  namespace :admin do
+    resources :configs
+  end
   devise_for :users, class_name: "Admin::User" ,controllers: {
     sessions: 'admin/users/sessions',
     registrations: 'admin/users/registrations'
   }
+
+  namespace :home do
+    get 'home/index'
+  end
+
+  get 'admin' => 'admin/infos#index'
   namespace :admin do
     delete 'products/:ids/destroy' => 'products#batch_destroy'
     delete 'categories/:ids/destroy' => 'categories#batch_destroy'
     delete 'news/:ids/destroy' => 'news#batch_destroy'
     delete 'news/:ids/destroy' => 'infomation#batch_destroy'
+    delete 'bimages/:ids/destroy' => 'bimages#batch_destroy'
     resources :users
     resources :products
     resources :categories
+    resources :bimages
     resources :information do
       collection do
         get 'news'
@@ -28,7 +41,7 @@ Rails.application.routes.draw do
     resources :messages
     resources :links
   end
-  root 'admin/users#index'
+  root 'home/home#index'
   mount RuCaptcha::Engine => "/rucaptcha"
   mount Ckeditor::Engine => '/ckeditor'
   # The priority is based upon order of creation: first created -> highest priority.

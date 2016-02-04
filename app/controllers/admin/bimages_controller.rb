@@ -85,6 +85,6 @@ class Admin::BimagesController < AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def admin_bimage_params
-      params.require(:admin_bimage).permit(:title, :avatar, :shown, :abstract)
+      params.require(:admin_bimage).permit(:title,:url, :avatar, :shown, :abstract)
     end
 end

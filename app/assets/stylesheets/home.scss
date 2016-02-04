@@ -4,6 +4,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import 'flat-ui';
+@import 'unslider';
+@import 'unslider-dots';
+
 body{
   background: url(background.jpg);
 }
@@ -25,4 +28,33 @@ body{
 }
 .bodyer{
   clear:both;
+  .ppt{
+    text-align: center;
+    .banner_item{
+
+      img{
+        width:500px;
+        height:500px;
+        border-radius: 500px;
+        -webkit-border-radius: 500px;
+        -moz-border-radius: 500px;
+      }
+
+      .info{
+        width:auto;
+        max-width: 350px;
+        max-height: 500px;
+        overflow: hidden;
+        margin-left: 50px;
+        display: inline-block;
+        .title{
+          margin-top: 20px;
+          margin-bottom: 0px;
+        }
+        .abstract{
+          margin-top: 5px;
+        }
+      }
+    }
+  }
 }

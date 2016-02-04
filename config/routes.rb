@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
 
 
-
-  namespace :admin do
-    resources :configs
-  end
   devise_for :users, class_name: "Admin::User" ,controllers: {
     sessions: 'admin/users/sessions',
     registrations: 'admin/users/registrations'
@@ -12,6 +8,13 @@ Rails.application.routes.draw do
 
   namespace :home do
     get 'home/index'
+    get 'contact/index'
+    get 'message/index'
+    get 'about/index'
+    get 'information/index'
+    get 'information/show'
+    get 'product/index'
+    get 'product/show'
   end
 
   get 'admin' => 'admin/infos#index'
@@ -25,6 +28,7 @@ Rails.application.routes.draw do
     resources :products
     resources :categories
     resources :bimages
+    resources :configs
     resources :information do
       collection do
         get 'news'

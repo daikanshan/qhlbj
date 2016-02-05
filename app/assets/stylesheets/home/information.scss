@@ -1,3 +1,20 @@
 // Place all the styles related to the home::information controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.item{
+  margin-left: 10%;
+  width: 45%;
+  .time{
+    float: left;
+  }
+  .title{
+    margin-left: 30px;
+    float: left;
+  }
+  a{
+    color:white;
+  }
+  a:hover{
+    color:white;
+  }
+}

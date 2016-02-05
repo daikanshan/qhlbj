@@ -12,9 +12,10 @@ Rails.application.routes.draw do
     get 'message/index'
     get 'about/index'
     get 'information/index'
-    get 'information/show'
+    get 'news/:id/show' => 'information#news'
+    get 'dynamic/:id/show' => 'information#dynamic'
     get 'product/index'
-    get 'product/show'
+    get 'product/:id/show' => 'product#show'
   end
 
   get 'admin' => 'admin/infos#index'
@@ -22,22 +23,15 @@ Rails.application.routes.draw do
     delete 'products/:ids/destroy' => 'products#batch_destroy'
     delete 'categories/:ids/destroy' => 'categories#batch_destroy'
     delete 'news/:ids/destroy' => 'news#batch_destroy'
-    delete 'news/:ids/destroy' => 'infomation#batch_destroy'
+    delete 'information/:ids/destroy' => 'information#batch_destroy'
     delete 'bimages/:ids/destroy' => 'bimages#batch_destroy'
     resources :users
     resources :products
     resources :categories
     resources :bimages
     resources :configs
-    resources :information do
-      collection do
-        get 'news'
-        get 'info'
-        get 'dynamic'
-        get 'culture'
-      end
-    end
-    post 'infomations' => 'information#index',as: :informations
+    resources :information
+    post 'infomations' => 'information#create',as: :informations
     resources :news
     resources :contacts
     resources :infos

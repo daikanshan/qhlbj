@@ -1,2 +1,28 @@
-<h1>Home::Contact#index</h1>
-<p>Find me in app/views/home/contact/index.html.erb</p>
+<%= stylesheet_link_tag 'home/contact' %>
+<div class="contact">
+  <div class="name">
+    <span class="glyphicon glyphicon-user"></span>
+    <label>联系人:</label>
+    <%= @info.name %>
+  </div>
+  <div class="email">
+    <span class="glyphicon glyphicon-envelope"></span>
+    <label>邮箱:</label>
+    <%= @info.email %>
+  </div>
+  <div class="phone">
+    <span class="glyphicon glyphicon-earphone"></span>
+    <label>手机:</label>
+    <%= @info.phone %>
+  </div>
+  <div class="fixed_phone">
+    <span class="glyphicon glyphicon-phone-alt"></span>
+    <label>座机:</label>
+    <%= @info.fixed_phone %>
+  </div>
+  <div class="address">
+    <span class="glyphicon glyphicon-road"></span>
+    <label>地址:</label>
+    <%= @info.address %>
+  </div>
+</div>

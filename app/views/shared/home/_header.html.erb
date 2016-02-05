@@ -1,6 +1,23 @@
 <div class="logo">
   <a href="/"><%= image_tag  @logo.avatar_url(:big) %></a>
 </div>
+<div class="fixed">
+  <div class="taobao item">
+    <a href=<%= @taobao.url %>>
+      <%= image_tag @taobao.avatar_url(:thumb) %>
+    </a>
+  </div>
+  <div class="weixin item">
+    <a href=<%= @weixin.url %>>
+      <%= image_tag @weixin.avatar_url(:thumb) %>
+    </a>
+  </div>
+  <div class="weibo item">
+    <a href=<%= @weibo.url %>>
+      <%= image_tag @weibo.avatar_url(:thumb) %>
+    </a>
+  </div>
+</div>
 <nav class="navbar navbar-default" role="navigation">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">

@@ -33,13 +33,13 @@ class Admin::ConfigAvatarUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb do
-    process :resize_to_fit => [25, 25]
+    process :resize_to_fill => [25, 25]
   end
   version :small do
-    process :resize_to_fit => [50, 50]
+    process :resize_to_fill => [50, 50]
   end
   version :big do
-    process :resize_to_fit => [100, 120]
+    process :resize_to_fill => [100, 120]
   end
   version :large do
     process :resize_to_fit => [500, 500]

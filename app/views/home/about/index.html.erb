@@ -1,2 +1,33 @@
-<h1>Home::About#index</h1>
-<p>Find me in app/views/home/about/index.html.erb</p>
+<%= javascript_include_tag 'home/about', 'data-turbolinks-track' => true %>
+<div class="options">
+  <ul class="nav">
+    <li>
+      <div class="option btn btn-info"  value="0">
+        <%= @info.title %>
+      </div>
+    </li>
+    <li>
+      <div class="option btn btn-info"  value="1">
+        <%= @culture.title %>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="oppt">
+  <div class="banner-outer">
+    <div class="banner_about">
+        <ul>
+          <li>
+            <div class="">
+              <%= raw @info.content %>
+            </div>
+          </li>
+          <li>
+            <div class="">
+              <%= raw @culture.content %>
+            </div>
+          </li>
+        </ul>
+    </div>
+  </div>
+</div>

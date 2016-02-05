@@ -1,2 +1,12 @@
-<h1>Home::Product#show</h1>
-<p>Find me in app/views/home/product/show.html.erb</p>
+<%= stylesheet_link_tag 'home/product', 'data-turbolinks-track' => true %>
+
+<div class="introduction">
+  <!-- <div class="avatar">
+    <%= image_tag @product.avatar_url(:large) %>
+  </div> -->
+  <h1><%= @product.name %></h1>
+
+  <p>
+    <%= raw @product.describe %>
+  </p>
+</div>

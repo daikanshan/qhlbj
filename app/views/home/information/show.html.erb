@@ -1,2 +1,9 @@
-<h1>Home::Information#show</h1>
-<p>Find me in app/views/home/information/show.html.erb</p>
+<%= stylesheet_link_tag 'home/product', 'data-turbolinks-track' => true %>
+
+<div class="introduction">
+  <h1><%= @info.title %></h1>
+
+  <p>
+    <%= raw @info.content %>
+  </p>
+</div>

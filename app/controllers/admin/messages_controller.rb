@@ -28,7 +28,7 @@ class Admin::MessagesController < AdminController
 
     respond_to do |format|
       if @admin_message.save
-        format.html { redirect_to @admin_message }
+        format.html { redirect_to home_message_index_path,notice:"留言成功！" }
         format.json { render :show, status: :created, location: @admin_message }
       else
         format.html { render :new }

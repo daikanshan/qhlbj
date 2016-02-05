@@ -1,3 +1,33 @@
 // Place all the styles related to the home::product controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.introduction{
+  width:70%;
+  text-align: center;
+  min-height: 500px;
+  border-radius: 9px;
+  border:1px solid white;
+  background-color: rgba(0, 0, 0,0.3);
+  color:white;
+  margin-top: 20px;
+  margin-left: 17%;
+  padding: 10px;
+  .avatar{
+
+    float:left;
+    margin-top: 15px;
+    margin-left: 15px;
+    img{
+      border-radius: 9px;
+    }
+    h1{
+
+    }
+
+
+  }
+  p{
+    clear:both;
+    text-align: left;
+  }
+}

@@ -1,2 +1,26 @@
-<h1>Home::Message#index</h1>
-<p>Find me in app/views/home/message/index.html.erb</p>
+<%= javascript_include_tag "ckeditor/init" %>
+<%= stylesheet_link_tag "home/message" %>
+<p id="notice"><%= notice %></p>
+<div class="comment-panel">
+  <%= form_tag admin_messages_path, method: :post, class: "" do %>
+    <%= text_field_tag(
+        'admin_message[name]',
+        params[:name],
+        placeholder: "称呼",
+        class: "form-control item"
+    ) %>
+    <%= text_field_tag(
+        'admin_message[contact]',
+        params[:contact],
+        placeholder: "联系方式",
+        class: "form-control item"
+    ) %>
+    <!-- <div class="form-group">
+      <%= cktext_area :content, :info, :cols => 40, :ckeditor => {:uiColor => '#fefefe', :toolbar => 'mini'} %>
+    </div> -->
+    <div class="form-group">
+      <%= text_area_tag 'admin_message[content]',"",placeholder: "留言...",rows:"8" ,class:"form-control item" %>
+    </div>
+    <%= submit_tag "留言" %>
+  <% end %>
+</div>

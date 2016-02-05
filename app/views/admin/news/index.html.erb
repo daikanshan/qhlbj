@@ -7,15 +7,15 @@
     <i class="glyphicon glyphicon-plus"></i>
     添加新闻
   </a>
-  <a id="view" class="btn btn-default" disabled="disabled">
+  <a id="view" class="btn btn-info" disabled="disabled">
     <i class="glyphicon glyphicon-align-justify"></i>
     详细信息
   </a>
-  <a id="edit" class="btn btn-default" disabled="disabled">
+  <a id="edit" class="btn btn-info" disabled="disabled">
     <i class="glyphicon glyphicon-pencil"></i>
     编辑
   </a>
-  <a id="del" rel="nofollow" class="btn btn-default" disabled="disabled">
+  <a id="del" rel="nofollow" class="btn btn-danger" disabled="disabled">
     <i class="glyphicon glyphicon-trash"></i>
     批量删除
   </a>
@@ -23,6 +23,12 @@
 <table class="table table-hover">
   <thead>
     <tr>
+      <th>
+        <label class="checkbox">
+          <input type="checkbox" class="p_checkbox" id="check_all">
+        </label>
+        <br>
+      </th>
       <th>标题</th>
       <th>内容</th>
       <th colspan="3"></th>
@@ -31,9 +37,14 @@
 
   <tbody>
     <% @admin_news.each do |admin_news| %>
-      <tr>
+      <tr class="item_line">
+        <td>
+          <label class="checkbox">
+            <input type="checkbox" class="p_checkbox" value="<%= admin_news.id %>">
+          </label>
+        </td>
         <td><%= admin_news.name %></td>
-        <td><%= admin_news.content %></td>
+        <td><%= admin_news.content[0..20] %></td>
         <td><%= link_to '显示详情', admin_news %></td>
         <td><%= link_to '编辑', edit_admin_news_path(admin_news) %></td>
         <td><%= link_to '删除', admin_news, method: :delete, data: { confirm: '是否删除该新闻?' } %></td>

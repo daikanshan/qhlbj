@@ -1,2 +1,51 @@
-<h1>Home::Information#index</h1>
-<p>Find me in app/views/home/information/index.html.erb</p>
+<%= javascript_include_tag 'home/product' %>
+<%= stylesheet_link_tag 'home/information' %>
+<div class="options">
+  <ul class="nav">
+    <li>
+      <div class="option btn btn-info"  value="0">
+        最新动态
+      </div>
+      <div class="option btn btn-info"  value="1">
+        行业新闻
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="oppt">
+  <div class="banner-outer">
+    <div class="banner_product">
+        <ul>
+
+            <li>
+              <% @dynamics.each do |d| %>
+                <div class="item">
+                  <div class="time">
+                    <span class="label label-info">
+                      <%= DateTime.parse(d.created_at.to_s).strftime('%Y-%m-%d') %>
+                    </span>
+                  </div>
+                  <div class="title">
+                    <%= link_to d.title,"/home/dynamic/#{d.id}/show" ,target:"_blank" %>
+                  </div>
+                </div>
+              <% end %>
+            </li>
+            <li>
+              <% @news.each do |n| %>
+              <div class="item">
+                <div class="time">
+                  <span class="label label-info">
+                    <%= DateTime.parse(n.created_at.to_s).strftime('%Y-%m-%d') %>
+                  </span>
+                </div>
+                <div class="title">
+                  <%= link_to n.title,"/home/news/#{n.id}/show" ,target:"_blank" %>
+                </div>
+              </div>
+              <% end %>
+            </li>
+        </ul>
+    </div>
+  </div>
+</div>

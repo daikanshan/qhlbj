@@ -41,7 +41,7 @@ class Admin::InformationController < AdminController
     ids = params[:ids].split(",").flatten
     if ids.nil?||ids.empty?
       respond_to do |format|
-        format.html { redirect_to admin_information_url,notice:'未选择产品！'}
+        format.html { redirect_to admin_information_index_url,notice:'未选择产品！'}
         format.json { head :no_content }
       end
     else
@@ -49,7 +49,7 @@ class Admin::InformationController < AdminController
         Admin::Information.find(id).destroy
       end
       respond_to do |format|
-        format.html { redirect_to admin_information_url,notice:'操作成功！'}
+        format.html { redirect_to admin_information_index_url,notice:'操作成功！'}
         format.json { head :no_content }
       end
     end

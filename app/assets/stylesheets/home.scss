@@ -8,7 +8,12 @@
 @import 'unslider-dots';
 
 body{
-  background: url(background.jpg);
+  background: url(background1.jpg);
+  background-size: cover;
+  .btn{
+    background-color: rgba(0,0,0,0);
+    border:1px white solid;
+  }
 }
 .header{
 
@@ -16,19 +21,67 @@ body{
     margin-top:20px;
     margin-left:20px;
   }
+  .fixed{
+    right:10px;
+    top:5px;
+    position:absolute;
+    .item{
+      margin-left: 10px;
+      float:left;
+    }
+  }
   .navbar{
     float:left;
     position :absolute;
     top:50px;
-    left:200px;
+    left:150px;
     right:100px;
+
     // width:80%;
     // background-color: rgba(0,0,0,0);
+  }
+  .navbar-default{
+    background-color: rgba(0,0,0,0);
+    border:1px white solid;
+    li{
+      background-color: rgba(0,0,0,0);
+      a{
+        color:white;
+        border-radius: 6px;
+      }
+    }
+    li:hover a{
+      background-color: rgba(225, 225, 225,1);
+      color:black;
+    }
+    li.active a{
+      color:#5BC0DE;
+      background-color: rgba(225, 225, 225,1);
+    }
+    li.active:hover a{
+      background-color: rgba(225, 225, 225,1);
+      color:black;
+    }
   }
 }
 .bodyer{
   clear:both;
+  .options{
+    float:left;
+    width:20%;
+    max-width: 120px;
+    min-height: 500px;
+    margin-top:10px;
+    .option{
+      margin-top: 10px;
+      display: block;
+      margin-left: 20px;
+      cursor: pointer;
+    }
+  }
   .ppt{
+
+    float:left;
     text-align: center;
     .banner_item{
 
@@ -41,6 +94,7 @@ body{
       }
 
       .info{
+        color: white;
         width:auto;
         max-width: 350px;
         max-height: 500px;
@@ -56,5 +110,38 @@ body{
         }
       }
     }
+
   }
+  .oppt{
+    min-height: 500px;
+    border-radius: 9px;
+    border:1px solid white;
+    background-color: rgba(0, 0, 0,0.3);
+    color:white;
+    margin-top: 20px;
+    margin-left: 8%;
+    padding: 10px;
+    padding-top: 20px;
+    width:70%;
+    float:left;
+    text-align: center;
+    .item{
+      float:left;
+      margin-left: 20px;
+      img{
+        border-radius: 9px;
+        -webkit-border-radius: 9px;
+        -moz-border-radius: 9px;
+      }
+      .title{
+
+      }
+    }
+  }
+}
+.footer{
+  padding-top: 20px;
+  color:white;
+  clear:both;
+  text-align: center;
 }

@@ -9,7 +9,7 @@ if Admin::User.count == 0
   success = false
   while !success
     print "请设置用户邮箱:"
-    eamil = STDIN.gets.chop
+    email = STDIN.gets.chop
 
     print "请设置用户密码:"
     password = STDIN.gets.chop
@@ -23,6 +23,7 @@ if Admin::User.count == 0
       print "抱歉，您的账户未创建成功！#{result.errors.full_messages.join(',')}"
     else
       print "恭喜，您的账户创建成功！"
+      success = true
     end
   end
 end

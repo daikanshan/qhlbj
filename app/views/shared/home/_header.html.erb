@@ -1,20 +1,20 @@
 <div class="logo">
-  <a href="/"><%= image_tag  @logo.avatar_url(:big) %></a>
+  <a href="/"><%= image_tag  @logo.avatar_url(:big) if @logo.avatar %></a>
 </div>
 <div class="fixed">
   <div class="taobao item">
     <a href=<%= @taobao.url %>>
-      <%= image_tag @taobao.avatar_url(:thumb) %>
+      <%= image_tag @taobao.avatar_url(:thumb) if @taobao.avatar %>
     </a>
   </div>
   <div class="weixin item">
     <a href=<%= @weixin.url %>>
-      <%= image_tag @weixin.avatar_url(:thumb) %>
+      <%= image_tag @weixin.avatar_url(:thumb) if @weixin.avatar %>
     </a>
   </div>
   <div class="weibo item">
     <a href=<%= @weibo.url %>>
-      <%= image_tag @weibo.avatar_url(:thumb) %>
+      <%= image_tag @weibo.avatar_url(:thumb) if @weibo.avatar %>
     </a>
   </div>
 </div>

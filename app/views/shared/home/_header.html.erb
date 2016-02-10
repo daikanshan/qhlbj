@@ -3,17 +3,17 @@
 </div>
 <div class="fixed">
   <div class="taobao item">
-    <a href=<%= @taobao.url %>>
+    <a href=<%= url_for @taobao.url %> target="_blank">
       <%= image_tag @taobao.avatar_url(:thumb) if @taobao.avatar %>
     </a>
   </div>
   <div class="weixin item">
-    <a href=<%= @weixin.url %>>
+    <a href=<%= url_for @weixin.url %> target="_blank">
       <%= image_tag @weixin.avatar_url(:thumb) if @weixin.avatar %>
     </a>
   </div>
   <div class="weibo item">
-    <a href=<%= @weibo.url %>>
+    <a href=<%= url_for @weibo.url %> target="_blank">
       <%= image_tag @weibo.avatar_url(:thumb) if @weibo.avatar %>
     </a>
   </div>

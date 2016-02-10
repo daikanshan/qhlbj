@@ -6,7 +6,9 @@
 @import 'flat-ui';
 @import 'unslider';
 @import 'unslider-dots';
-
+.unslider-nav{
+  display: none;
+}
 body{
   background: image-url("background1.jpg");
   background-size: cover;
@@ -25,12 +27,16 @@ body{
     right:10px;
     top:5px;
     position:absolute;
+    img{
+      border-radius: 100%;
+    }
     .item{
       margin-left: 10px;
       float:left;
     }
   }
   .navbar{
+    z-index: 99;
     float:left;
     position :absolute;
     top:50px;
@@ -51,21 +57,22 @@ body{
       }
     }
     li:hover a{
-      background-color: rgba(225, 225, 225,1);
+      background-color: rgb(35, 103, 39);
       color:black;
     }
     li.active a{
       color:#5BC0DE;
-      background-color: rgba(225, 225, 225,1);
+      background-color: rgb(35, 103, 39);
     }
     li.active:hover a{
-      background-color: rgba(225, 225, 225,1);
-      color:black;
+      background-color: rgb(35, 103, 39);
+      color:white;
     }
   }
 }
 .bodyer{
   clear:both;
+  margin-top: 5px;
   .options{
     float:left;
     width:20%;
@@ -88,9 +95,9 @@ body{
       img{
         width:500px;
         height:500px;
-        border-radius: 500px;
-        -webkit-border-radius: 500px;
-        -moz-border-radius: 500px;
+        border-radius: 50%;
+        // -webkit-border-radius: 500px;
+        // -moz-border-radius: 500px;
       }
 
       .info{
@@ -104,9 +111,10 @@ body{
         .title{
           margin-top: 20px;
           margin-bottom: 0px;
+          color:rgb(35, 103, 39);
         }
         .abstract{
-          margin-top: 5px;
+          margin-top: 20px;
         }
       }
     }

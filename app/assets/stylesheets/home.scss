@@ -21,7 +21,7 @@ body{
 
   .logo{
     margin-top:20px;
-    margin-left:20px;
+    margin-left:18px;
   }
   .fixed{
     right:10px;
@@ -135,13 +135,19 @@ body{
     text-align: center;
     .item{
       float:left;
-      margin-left: 20px;
-      img{
+      margin-left: 12px;
+      .img{
         border-radius: 9px;
-        -webkit-border-radius: 9px;
-        -moz-border-radius: 9px;
+        border-width:1px;
+        img{
+          border-radius: 9px;
+        }
       }
+
       .title{
+        text-align: center;
+      }
+      .more{
 
       }
     }

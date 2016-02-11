@@ -5,6 +5,7 @@
 //= require ckeditor/init
 $(function() {
     unslider = $('.banner').unslider({
+      animation: 'vertical',
       autoplay: true,
       arrows:false,
       dots:false,

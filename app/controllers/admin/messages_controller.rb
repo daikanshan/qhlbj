@@ -1,4 +1,5 @@
 class Admin::MessagesController < AdminController
+  skip_before_action :authenticate_user!, only:[:create]
   before_action :set_admin_message, only: [:show, :edit, :update, :destroy]
 
   # GET /admin/messages

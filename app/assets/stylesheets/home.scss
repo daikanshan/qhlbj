@@ -9,9 +9,14 @@
 .unslider-nav{
   display: none;
 }
-body{
+html{
   background: image-url("background1.jpg");
   background-size: cover;
+}
+body{
+
+  background: image-url("ly.png") no-repeat 105% 105%;
+  background-size: 50%;
   .btn{
     background-color: rgba(0,0,0,0);
     border:1px white solid;
@@ -109,8 +114,10 @@ body{
         .mubu{
           position: absolute;
           left:18%;
-          width:450px;
-          height:450px;
+          margin-left: 50px;
+          margin-top: 50px;
+          width:350px;
+          height:350px;
           border-radius: 50%;
           // -webkit-border-radius: 500px;
           // -moz-border-radius: 500px;
